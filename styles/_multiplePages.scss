@@ -1,0 +1,55 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &__links { color: $grayish-dark-blue }
+}
+
+.links {
+    @include thin-font();
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.btn {
+    border: 1px solid $grayish-dark-blue;
+    background-color: transparent;
+    padding: 15px 20px;
+    cursor: pointer;
+    &:hover {
+        background-color: $grayish-dark-blue;
+        color: white;
+        transition: 0.15s ease-in-out;
+    }
+}
+
+.cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    h2 { flex: 0 0 35% }
+    hr { flex: 0.90 }
+    
+  
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    background-color: $grayish-dark-blue;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    & > * { color: white }
+    &__links { margin-left: 40px }
+    .socials {
+        width: 80px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+    }
+}
