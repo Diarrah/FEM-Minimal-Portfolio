@@ -4,25 +4,32 @@
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
-    &__links { color: $grayish-dark-blue }
-}
-
-.links {
-    @include thin-font();
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
+    &__links { 
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+    }
 }
 
 .btn {
     border: 1px solid $grayish-dark-blue;
     background-color: transparent;
-    padding: 15px 20px;
+    padding: 15px;
+    width: 200px;
     cursor: pointer;
     &:hover {
         background-color: $grayish-dark-blue;
         color: white;
         transition: 0.15s ease-in-out;
+    }
+    &-homepage {
+        background: linear-gradient(to right, hsl(205, 40%, 19%) 25%, $dark-blue 25% 100%);
+        color: white;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        span { flex: 0 0 75% }
+        &:hover { background: linear-gradient(to right,	hsl(168, 31%, 48%) 25%, $desaturated-cyan 25% 100%) }
     }
 }
 
@@ -45,7 +52,7 @@
     padding-top: 25px;
     padding-bottom: 25px;
     & > * { color: white }
-    &__links { margin-left: 40px }
+    .navbar__links { margin-left: 40px }
     .socials {
         width: 80px;
         display: flex;
