@@ -4,24 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="/styles/main.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Minimalist Portfolio</title>
+  <title>Frontend Mentor | Minimalist Portfolio - Home</title>
 </head>
 <body>
   
   <nav class="navbar">
     <img src="/images/logo.svg" alt="Company logo">
-    <ul class="navbar__links links">
+    <ul class="navbar__links">
       <li>
-        <a href="index.html">Home</a>
+        <a href="/index.html">Home</a>
       </li>
       <li>
-        <a href="portfolio.html">Portfolio</a>
+        <a href="/portfolio.html">Portfolio</a>
       </li>
       <li>
-        <a href="contact.html">Contact Me</a>
+        <a href="/contact.html">Contact Me</a>
       </li>
     </ul>
   </nav>
@@ -30,19 +29,23 @@
     <img src="/images/homepage/desktop/image-homepage-hero@2x.jpg" alt="Portfolio preview">
     <div class="hero__text">
       <h1>Hey, I’m Alex Spencer and I love building beautiful websites</h1>
-      <p><img src="/images/icons/down-arrows.svg" alt="Downwards arrows">About Me</p>
+        <button class="btn btn-homepage" onclick="window.location.href='#mainText'">
+          <img src="/images/icons/down-arrows.svg" alt="Downwards arrows">
+          <span>About Me</span>
+        </button>
     </div>
   </div>
 
-  <div class="about__me">
+  <div class="about">
     <div class="img__container">
       <img src="/images/homepage/desktop/image-homepage-profile@2x.jpg" alt="Developer portrait">
     </div>
-    <div class="about__me__text">
+    <div id="mainText" class="main__text">
       <hr>
-      <h2>About Me</h2>
-      <p>
-        I’m a junior front-end developer looking for a new role in an exciting company. 
+      <div class="inner__text">
+        <h2>About Me</h2>
+        <p>
+          I’m a junior front-end developer looking for a new role in an exciting company. 
           I focus on writing accessible HTML, using modern CSS practices and writing clean 
           JavaScript. When writing JavaScript code, I mostly use React, but I can adapt to 
           whatever tools are required. I’m based in London, UK, but I’m happy working remotely 
@@ -50,45 +53,46 @@
           I love being out in nature whether that’s going for a walk, run or cycling. I’d love 
           you to check out my work.
         </p>
-      <form action="portfolio.html">
-        <button type="submit" class="btn">Go to portfolio</button>
-      </form>
-      <hr>
+        <form action="/portfolio.html">
+          <button type="submit" class="btn">Go to portfolio</button>
+        </form>
     </div>
+    <hr>
   </div>
+</div>
 
   <div class="cta">
     <h2>Interested in doing a project together?</h2>
     <hr>
-    <form action="contact.html">
+    <form action="/contact.html">
       <button type="submit" class="btn">Contact me</button>
     </form>
   </div>
 
   <footer class="footer">
-    <img src="/images/logo-white.svg" alt="Company logo">
-    <ul class="footer__links links">
-      <li>
-        <a href="index.html">Home</a>
-      </li>
-      <li>
-        <a href="portfolio.html">Portfolio</a>
-      </li>
-      <li>
-        <a href="contact.html">Contact Me</a>
-      </li>
-    </ul>
-    <div class="socials">
-      <a href="#" aria-label="View my work on Github">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="#" aria-label="Follow me on Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#" aria-label="Add me on LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div> 
+      <img src="/images/logo-white.svg" alt="Company logo">
+      <ul class="navbar__links">
+        <li>
+          <a href="/index.html">Home</a>
+        </li>
+        <li>
+          <a href="/portfolio.html">Portfolio</a>
+        </li>
+        <li>
+          <a href="/contact.html">Contact Me</a>
+        </li>
+      </ul>
+      <div class="socials">
+        <a href="#" aria-label="View my work on Github">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" aria-label="Follow me on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="Add me on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
   </footer>
 
   <script src="script.js"></script>
