@@ -10,20 +10,24 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <img src="/images/logo.svg" alt="Company logo">
-        <ul class="navbar__links">
-          <li>
-            <a href="/index.html">Home</a>
-          </li>
-          <li>
-            <a href="/portfolio.html">Portfolio</a>
-          </li>
-          <li>
-            <a href="/contact.html">Contact Me</a>
-          </li>
-        </ul>
-      </nav>
+  <nav class="navbar">
+    <img src="/images/logo.svg" alt="Company logo">
+    <ul class="navbar__links">
+      <li>
+        <a href="/index.html">Home</a>
+      </li>
+      <li class="current">
+        <a href="/portfolio.html">Portfolio</a>
+      </li>
+      <li>
+        <a href="/contact.html">Contact Me</a>
+      </li>
+    </ul>
+    <a href="#" class="navbar__mobile">
+      <img src="/images/icons/hamburger.svg" class="hamburger" alt="Hamburger shape">
+      <img src="/images/icons/close.svg" class="close" alt="X shape">
+    </a>
+  </nav>
   
       <div class="img__container">
         <img src="/images/detail/desktop/image-fylo-hero@2x.jpg" alt="Static preview of webpage">
@@ -40,10 +44,10 @@
           </p>
           <small> 
             Interaction Design / Front End Development
-            <br> <br>
+            <br>
             HTML / CSS
           </small>
-          <form action="" type="submit">
+          <form action="https://www.frontendmentor.io/solutions/dark-fylo-with-custom-scroll-bar-TpAFKDIjN/preview" target="_blank" type="submit">
             <button class="btn">Visit website</button>
           </form>
           <hr>
@@ -72,7 +76,8 @@
       <div class="project__nav">
         <form action="/projects/insure.html">
           <button>
-            <img src="/images/icons/arrow-left.svg" alt="Previous slide indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M9 0L1 8l8 8"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M9 0L1 8l8 8"/></svg>
             <div class="prev">
               <h3>Insure</h3>
               <p>Previous Project</p></div>
@@ -80,7 +85,8 @@
         </form>
         <form action="/projects/manage.html">
           <button>
-            <img src="/images/icons/arrow-right.svg" alt="Next slide indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M1 0l8 8-8 8"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16"><path fill="none" stroke="#33323D" d="M1 0l8 8-8 8"/></svg>
             <div class="next">
               <h3>Manage</h3>
               <p>Next Project</p>
@@ -99,7 +105,7 @@
     
       <footer class="footer">
           <img src="/images/logo-white.svg" alt="Company logo">
-          <ul class="navbar__links">
+          <ul class="footer__links">
             <li>
               <a href="/index.html">Home</a>
             </li>
@@ -123,6 +129,6 @@
           </div>
       </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
