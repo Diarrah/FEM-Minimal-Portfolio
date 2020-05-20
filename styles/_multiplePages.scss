@@ -1,13 +1,69 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    @include flex-btwn();
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
     &__links { 
-        display: flex;
-        justify-content: space-between;
+        @include flex-btwn();
         width: 300px;
+        li {
+            position: relative;
+            &.current {
+                color: $desaturated-cyan; 
+                text-shadow: .35px 0px $desaturated-cyan;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -6px;
+                height: 1px; width: 0;
+                transition: .2s;
+            }
+            &:not(.current):hover::after {
+                content: '';
+                position: absolute;
+                left: -10%;
+                bottom: -6px;
+                height: 1px; width: 120%;
+                background-color: $desaturated-cyan;
+            }
+        }
+
+   
+    }
+    &__mobile {
+        display: none;
+        .close { display: none }
+    }
+    @include cellphone-breakpoint {
+        &__links {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            background-color: $grayish-dark-blue;
+            top: 100px; right: 5vw;
+            width: 50vw; min-width: 200px;
+            padding-top: 30px;
+            transform: translateY(-300px);
+            transition: .5s ease-in-out;
+            li, li.current { 
+                margin-bottom: 30px;
+                text-align: center;
+                color: white;
+                text-shadow: none;
+                &:hover { color: $desaturated-cyan }
+                &::after { display: none }
+            }
+            &.active { transform: translateY(0) }
+        }
+        &__mobile {
+            display: block;
+            &.active {
+                .hamburger { display: none }
+                .close { display: block }
+            }
+        }
     }
 }
 
@@ -22,27 +78,32 @@
         color: white;
         transition: 0.15s ease-in-out;
     }
-    &-homepage {
-        background: linear-gradient(to right, hsl(205, 40%, 19%) 25%, $dark-blue 25% 100%);
-        color: white;
-        border: none;
-        display: flex;
-        justify-content: space-between;
-        span { flex: 0 0 75% }
-        &:hover { background: linear-gradient(to right,	hsl(168, 31%, 48%) 25%, $desaturated-cyan 25% 100%) }
-    }
 }
 
 .cta {
-    display: flex;
-    justify-content: space-between;
+    @include flex-btwn();
     align-items: center;
     padding-top: 100px;
     padding-bottom: 100px;
     h2 { flex: 0 0 35% }
-    hr { flex: 0.90 }
-    
-  
+    hr { flex: 0.9 }
+    @include rwd(1130) {
+        h2 { flex: 0 0 45% }
+    }
+    @include rwd(835) {
+        h2 { font-size: 4.6vw }
+    }
+    @include rwd(660) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        flex-direction: column;
+        text-align: center;
+        h2 { 
+            margin-bottom: 30px;
+            font-size: 2.3em; // Make sure this is the same that's in the typography mixin
+        }
+        hr { display: none }
+    }
 }
 
 .footer {
@@ -52,11 +113,33 @@
     padding-top: 25px;
     padding-bottom: 25px;
     & > * { color: white }
-    .navbar__links { margin-left: 40px }
+    &__links {
+        @include flex-btwn();
+        width: 300px;
+        margin-left: 40px
+    }
     .socials {
+        @include flex-btwn();
         width: 80px;
-        display: flex;
-        justify-content: space-between;
         margin-left: auto;
+    }
+    @include cellphone-breakpoint {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        flex-direction: column;
+        & > * { margin: 0 auto }
+        &__links { 
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 0;
+            li {
+                margin-bottom: 25px;
+                &:last-of-type { margin-bottom: 0 }
+            }
+        }
+        .socials {
+            width: 120px;
+            a i { font-size: 25px }
+        }
     }
 }
