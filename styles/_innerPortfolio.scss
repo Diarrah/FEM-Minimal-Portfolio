@@ -1,0 +1,107 @@
+.img__container { max-width: 100% }
+
+.project__details {
+    @include flex-btwn();
+    padding-top: 100px;
+    & > * p { @include small-font() }
+    .overview {
+        flex: 0 0 35%;
+        h2 { padding-top: 35px }
+        p { padding: 35px 0 }
+        small { @include portfolio-overview }
+        form { padding: 30px 0 50px }
+    }
+    .bg__previews {
+        flex: 0 0 55%;
+        h3 { padding-bottom: 30px }
+        .previews {
+            margin-top: 50px;
+            img:nth-of-type(2) { padding-top: 30px }
+            
+        }
+    }
+    @include tablet-breakpoint {
+        flex-direction: column;
+        .overview {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            grid-gap: 20px;
+            hr {
+                position: absolute;
+                width: 100%;
+                &:nth-of-type(2) { bottom: 0 }
+            }
+            small { grid-area: 2 / 1 / 3 / 2 }
+            form { 
+                grid-area: 3 / 1 / 4 / 2;
+                padding: 0 0 35px;
+            }
+            p { grid-area: 1 / 2 / 4 / 3 }
+        }
+        .bg__previews { margin-top: 50px }
+    }
+    @include cellphone-breakpoint {
+        padding-top: 20px;
+        .overview { 
+            display: flex;
+            flex-direction: column;
+            p { padding: 20px 0 }
+            form { padding-top: 35px }
+        }
+    }
+}
+
+.project__nav {
+    @include flex-btwn();
+    padding-top: 100px;
+    form {
+        flex: 1;   
+        &:nth-child(1) button {
+            text-align: left;
+            svg { 
+                transition: .5s; 
+                &:nth-of-type(1) { position: absolute }
+            }
+            &:hover {
+                svg:nth-of-type(1) { transform: translateX(-15px) }
+            }
+            .prev { margin-left: 20px }
+        }  
+        &:nth-child(2) button {
+            text-align: right;
+            flex-direction: row-reverse;
+            border-right: none;
+            svg { 
+                transition: .5s;
+                &:nth-of-type(1) { position: absolute }
+            }
+            &:hover { 
+                svg:nth-of-type(1) { transform: translateX(15px) }
+             }
+            .next { margin-right: 20px }
+        }
+        button {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            width: 100%;
+            cursor: pointer;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            border: 1px solid hsla(245, 9.9%, 21.8%, .15);
+            border-left: none;
+            p { opacity: 50% }
+            &:hover {
+                svg path { stroke: $desaturated-cyan }
+            }
+        }
+    }
+    @include cellphone-breakpoint {
+        padding-top: 20px;
+    }
+    @include rwd(400) {
+        h3 { font-size: 1.7em }
+    }
+}
