@@ -3,25 +3,67 @@
     padding-bottom: 50px;
     .project {
         display: flex;
-        padding-bottom: 100px;
+        margin-bottom: 100px;
+        &:nth-of-type(4) { margin-bottom: 0px }
         .img__container {
             flex: 0 0 50%;
-            margin: 0 10% 0 0;
-            img { max-width: 100% }
+            margin: auto 10% auto 0;
         }
         .description { 
-            display: flex;
+            @include flex-btwn();
             flex-direction: column;
-            justify-content: space-between;
             flex: 0 0 35%;
-            .inner__text {
+            .desc__inner {
                 p { padding: 30px 0 }
             }
         }
         &:nth-of-type(even) { 
             flex-direction: row-reverse;
-            .img__container { margin: 0 0 0 10% }
+            .img__container { margin: auto 0 auto 10% }
         }
-        &:nth-of-type(4) { padding-bottom: 0 }
+    }
+
+    @include rwd(960) {
+        .project {
+            &:nth-of-type(even) { 
+                .img__container { margin: auto 0 auto 8% } 
+            }
+            .img__container { 
+                flex: 0 0 45%; 
+                margin: auto 8% auto 0;
+            }
+            .description { 
+                flex: 0 0 45%; 
+                .desc__inner {
+                    h2 { 
+                        font-size: 2em;
+                        letter-spacing: 2px;
+                        padding-top: 20px;
+                    }
+                    p { 
+                        padding: 10px 0 20px;
+                        line-height: 1.7;
+                    }
+                    form { padding-bottom: 20px }
+                }
+            }
+        }
+    }
+
+    @include cellphone-breakpoint {
+        padding-top: 0;
+        padding-bottom: 0;
+        .project {
+            display: block;
+            margin-bottom: 50px;
+            &:nth-of-type(even) {
+                .img__container { margin: 0 0 20px }
+            }
+            .img__container { margin: 0 0 20px 0 }
+            .description .desc__inner {
+                h2 { padding-top: 40px }
+                form { padding-bottom: 40px }
+            }
+        }
     }
 }
