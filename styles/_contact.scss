@@ -12,14 +12,22 @@ main {
             width: 100%;
             top: 0;
         }
+
+        @include tablet-breakpoint {
+            flex-direction: column;
+            padding-top: 40px;
+            padding-bottom: 40px;   
+            h2 { padding-bottom: 40px }       
+        }
+    }
+    @include cellphone-breakpoint {
+        padding-top: 0;
     }
 }
 
 .in__touch__text {
-    p { opacity: 80% }
     .socials {
-        display: flex;
-        justify-content: space-between;
+        @include flex-btwn();
         width: 100px;
         padding-top: 30px;
         a {
@@ -60,6 +68,20 @@ main {
         textarea {
             min-height: 100px; max-height: 180px;
             resize: vertical;
+            &::-webkit-scrollbar {
+                width: 10px;
+                &-track {
+                    background-color: #fff;
+                    border-right: 4px solid $light-gray;
+                    border-left: 4px solid $light-gray;
+                }
+                &-thumb {
+                    width: 10px;
+                    background-color: $dark-blue;
+                    border-radius: 100px;
+                }
+                &-corner { display: none }
+            }
         }
         small { display: none }
 
