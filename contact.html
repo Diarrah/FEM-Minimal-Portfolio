@@ -11,19 +11,25 @@
 
 <body>
     <nav class="navbar">
-        <img src="/images/logo.svg" alt="Company logo">
+        <a href="/index.html">
+            <img src="/images/logo.svg" alt="Company logo">
+        </a>
         <ul class="navbar__links">
-            <li>
-                <a href="/index.html">Home</a>
-            </li>
-            <li>
-                <a href="/portfolio.html">Portfolio</a>
-            </li>
-            <li>
-                <a href="/contact.html">Contact Me</a>
-            </li>
+          <li>
+            <a href="/index.html">Home</a>
+          </li>
+          <li>
+            <a href="/portfolio.html">Portfolio</a>
+          </li>
+          <li class="current">
+            <a href="/contact.html">Contact Me</a>
+          </li>
         </ul>
-    </nav>
+        <a href="#" class="navbar__mobile">
+          <img src="/images/icons/hamburger.svg" class="hamburger" alt="Hamburger shape">
+          <img src="/images/icons/close.svg" class="close" alt="X shape">
+        </a>
+      </nav>
 
     <main>
         <div class="in__touch">
@@ -77,8 +83,10 @@
     </main>
 
     <footer class="footer">
-        <img src="/images/logo-white.svg" alt="Company logo">
-        <ul class="navbar__links">
+        <a href="/index.html">
+            <img src="/images/logo-white.svg" alt="Company logo">
+        </a>
+        <ul class="footer__links">
             <li>
                 <a href="/index.html">Home</a>
             </li>
