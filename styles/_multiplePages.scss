@@ -29,8 +29,6 @@
                 background-color: $desaturated-cyan;
             }
         }
-
-   
     }
     &__mobile {
         display: none;
@@ -59,6 +57,7 @@
         }
         &__mobile {
             display: block;
+            position: relative;
             &.active {
                 .hamburger { display: none }
                 .close { display: block }
@@ -80,6 +79,8 @@
     }
 }
 
+img { max-width: 100% }
+
 .cta {
     @include flex-btwn();
     align-items: center;
@@ -100,7 +101,7 @@
         text-align: center;
         h2 { 
             margin-bottom: 30px;
-            font-size: 2.3em; // Make sure this is the same that's in the typography mixin
+            font-size: 2.2em;
         }
         hr { display: none }
     }
@@ -132,6 +133,7 @@
             flex-direction: column;
             text-align: center;
             padding: 40px 0;
+            width: auto;
             li {
                 margin-bottom: 25px;
                 &:last-of-type { margin-bottom: 0 }
