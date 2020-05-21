@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); // sans-serif
-@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;700&display=swap'); //serif
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;700&display=swap');
 
 $ibarra: 'Ibarra Real Nova', serif;
 $sans: 'Open Sans', sans-serif;
@@ -8,41 +8,93 @@ html {
     font-size: 16px;
     font-family: $sans;
 }
-
-h1, h2, h3 {
-    font-family: $ibarra;
+    
+@mixin small-font {
+    font-size: 0.9375;
+    line-height: 2;
+    color: $grayish-dark-blue;
+    opacity: 80%;
 }
+    
+@mixin thin-font {
+    font-size: 0.75em;
+    font-weight: 100;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@mixin portfolio-overview {
+    font-size: .85em;
+    line-height: 1.5;
+    color: $desaturated-cyan;
+    font-style: normal;
+}
+
+h1, h2, h3 { font-family: $ibarra }
 
 h1 {
     font-size: 3.125em;
     font-weight: 700;
     line-height: 1;
+    @include rwd(1063) { font-size: 4.5vw }
+    @include tablet-breakpoint { font-size: 2.5em }
+    @include rwd(375) { font-size: 2.2em }
 }
 
 h2 {
     font-size: 2.5em;
     font-weight: 700;
     line-height: 1.05;
+    @include cellphone-breakpoint {
+        font-size: 2.2em;
+    }
 }
 
 h3 {
     font-size: 2em;
     font-weight: 400;
     line-height: 1.125;
-
 }
 
-button { 
-    font-family: inherit;
-    text-transform: uppercase;
-}
-
-@mixin medium-font {
+p {
     font-size: 1em;
     line-height: 1.875;
+    color: $grayish-dark-blue;
+    opacity: 80%;
+    @include tablet-breakpoint {
+        font-size: .9em;
+    }
 }
 
-@mixin small-font {
-    font-size: 0.9375;
-    line-height: 2;
+.btn { 
+    font-family: inherit;
+    text-transform: uppercase;
+    border: none;
+    @include thin-font();
+}
+
+small {
+    color: $red;
+    font-style: italic;
+    font-size: 10px;
+    font-weight: 700;
+    padding-top: 3px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 80%;
+}
+
+ul { 
+    list-style: none;
+    li { @include thin-font() }
+}
+
+a { 
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
 }
