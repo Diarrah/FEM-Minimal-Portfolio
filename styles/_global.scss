@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0; 
     padding: 0;
-    &:focus { outline: 0; }
+    &:focus { outline: 0 }
 }
 
 body {
@@ -12,5 +12,14 @@ body {
         padding-left: 8vw;
         padding-right: 8vw;
         overflow-x: hidden;
+        @include tablet-breakpoint {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
     }
+}
+
+@mixin flex-btwn {
+    display: flex;
+    justify-content: space-between;
 }
